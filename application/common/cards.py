@@ -35,7 +35,7 @@ class MarvelGroups(Enum):
     gotg = "Guardians of the Galaxy"
 
 
-PLAYER_AMOUNT = ["1", "2", "3", "4", "5"]
+PLAYER_AMOUNT = [1, 2, 3, 4, 5]
 
 DIFFICULTIES = ["Normal", "Heroic", "Champion", "Legendary"]
 

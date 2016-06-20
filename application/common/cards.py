@@ -4,35 +4,35 @@ from enum import Enum
 class Expansions(Enum):
     """Accepted Expansions."""
 
-    core = 1
-    dc = 2
-    gotg = 3
+    core = "Core"
+    dc = "Dark City"
+    gotg = "Guardians of the Galaxy"
 
 
 class MarvelClasses(Enum):
     """The marvel classes."""
 
-    covert = 1
-    instinct = 2
-    ranged = 3
-    strength = 4
-    tech = 5
+    covert = "Covert"
+    instinct = "Instinct"
+    ranged = "Ranged"
+    strength = "Strength"
+    tech = "Tech"
 
 
 class MarvelGroups(Enum):
     """The Marvel groups."""
 
     # Core
-    avengers = 11
-    shield = 12
-    solo = 13
-    spider_friends = 14
-    xmen = 15
+    avengers = "Avengers"
+    shield = "S.H.I.E.L.D."
+    solo = "None"
+    spider_friends = "Spider Friends"
+    xmen = "X-MEN"
     # Dark City
-    mk = 21
-    xforce = 22
+    mk = "Marvel Knights"
+    xforce = "X-Force"
     # Gotg
-    gotg = 31
+    gotg = "Guardians of the Galaxy"
 
 
 PLAYER_AMOUNT = ["1", "2", "3", "4", "5"]
@@ -49,14 +49,14 @@ MASTERMIND_DIFFICULTIES = [
     "All-Powerful"]
 
 MASTERMINDS = {
-    Expansions.core: ["Dr. Doom", "Loki", "Magneto", "Red Skull"],
-    Expansions.dc: ["Apocalypse", "Kingpin", "Mephisto",
-                    "Mr. Sinister", "Stryfe"],
-    Expansions.gotg: ["Supreme Intelligence of the Kree", "Thanos"]
+    Expansions.core.value: ["Dr. Doom", "Loki", "Magneto", "Red Skull"],
+    Expansions.dc.value: ["Apocalypse", "Kingpin", "Mephisto",
+                          "Mr. Sinister", "Stryfe"],
+    Expansions.gotg.value: ["Supreme Intelligence of the Kree", "Thanos"]
 }
 
 SCHEMES = {
-    Expansions.core: [
+    Expansions.core.value: [
         "The Legacy Virus",
         "Midtown Bank Robbery",
         "Negative Zone Prison Breakout",
@@ -65,7 +65,7 @@ SCHEMES = {
         "Secret Invasion of the Skrull Shapeshifters",
         "Super Hero Civil War",
         "Unleash the Power of the Cosmic Cube"],
-    Expansions.dc: [
+    Expansions.dc.value: [
         "Capture Baby Hope",
         "Detonate the Helicarrier",
         "Massive Earthquake Generator",
@@ -74,7 +74,7 @@ SCHEMES = {
         "Steal the Weaponized Plutonium",
         "Transform Citizens into Demons",
         "X-Cutioner's Song"],
-    Expansions.gotg: [
+    Expansions.gotg.value: [
         "Unite the Shards",
         "Forge the Infinity Gauntlet",
         "Intergalactic Kree Nega-Bomb",
@@ -82,73 +82,73 @@ SCHEMES = {
 }
 
 HEROES = {
-    Expansions.core: [
+    Expansions.core.value: [
         {"Name": "Captain America",
-         "Group": MarvelGroups.avengers,
-         "Classes": [MarvelClasses.covert,
-                     MarvelClasses.instinct,
-                     MarvelClasses.strength,
-                     MarvelClasses.tech]},
+         "Group": MarvelGroups.avengers.value,
+         "Classes": [MarvelClasses.covert.value,
+                     MarvelClasses.instinct.value,
+                     MarvelClasses.strength.value,
+                     MarvelClasses.tech.value]},
         {"Name": "Spider-Man",
-         "Group": MarvelGroups.spider_friends,
-         "Classes": [MarvelClasses.covert,
-                     MarvelClasses.instinct,
-                     MarvelClasses.strength,
-                     MarvelClasses.tech]},
+         "Group": MarvelGroups.spider_friends.value,
+         "Classes": [MarvelClasses.covert.value,
+                     MarvelClasses.instinct.value,
+                     MarvelClasses.strength.value,
+                     MarvelClasses.tech.value]},
         {"Name": "Iron Man",
-         "Group": MarvelGroups.avengers,
-         "Classes": [MarvelClasses.ranged,
-                     MarvelClasses.tech]},
+         "Group": MarvelGroups.avengers.value,
+         "Classes": [MarvelClasses.ranged.value,
+                     MarvelClasses.tech.value]},
         {"Name": "Thor",
-         "Group": MarvelGroups.avengers,
-         "Classes": [MarvelClasses.ranged,
-                     MarvelClasses.strength]},
+         "Group": MarvelGroups.avengers.value,
+         "Classes": [MarvelClasses.ranged.value,
+                     MarvelClasses.strength.value]},
         {"Name": "Rogue",
-         "Group": MarvelGroups.xmen,
-         "Classes": [MarvelClasses.covert,
-                     MarvelClasses.strength]},
+         "Group": MarvelGroups.xmen.value,
+         "Classes": [MarvelClasses.covert.value,
+                     MarvelClasses.strength.value]},
         {"Name": "Wolverine",
-         "Group": MarvelGroups.xmen,
-         "Classes": [MarvelClasses.instinct]},
+         "Group": MarvelGroups.xmen.value,
+         "Classes": [MarvelClasses.instinct.value]},
         {"Name": "Cyclops",
-         "Group": MarvelGroups.xmen,
-         "Classes": [MarvelClasses.ranged,
-                     MarvelClasses.strength]},
+         "Group": MarvelGroups.xmen.value,
+         "Classes": [MarvelClasses.ranged.value,
+                     MarvelClasses.strength.value]},
         {"Name": "Storm",
-         "Group": MarvelGroups.xmen,
-         "Classes": [MarvelClasses.covert,
-                     MarvelClasses.ranged]},
+         "Group": MarvelGroups.xmen.value,
+         "Classes": [MarvelClasses.covert.value,
+                     MarvelClasses.ranged.value]},
         {"Name": "Nick Fury",
-         "Group": MarvelGroups.shield,
-         "Classes": [MarvelClasses.covert,
-                     MarvelClasses.strength,
-                     MarvelClasses.tech]},
+         "Group": MarvelGroups.shield.value,
+         "Classes": [MarvelClasses.covert.value,
+                     MarvelClasses.strength.value,
+                     MarvelClasses.tech.value]},
         {"Name": "Hawkeye",
-         "Group": MarvelGroups.avengers,
-         "Classes": [MarvelClasses.instinct,
-                     MarvelClasses.tech]},
+         "Group": MarvelGroups.avengers.value,
+         "Classes": [MarvelClasses.instinct.value,
+                     MarvelClasses.tech.value]},
         {"Name": "Black Widow",
-         "Group": MarvelGroups.avengers,
-         "Classes": [MarvelClasses.covert,
-                     MarvelClasses.tech]},
+         "Group": MarvelGroups.avengers.value,
+         "Classes": [MarvelClasses.covert.value,
+                     MarvelClasses.tech.value]},
         {"Name": "Emma Frost",
-         "Group": MarvelGroups.xmen,
-         "Classes": [MarvelClasses.covert,
-                     MarvelClasses.instinct,
-                     MarvelClasses.ranged,
-                     MarvelClasses.strength]},
+         "Group": MarvelGroups.xmen.value,
+         "Classes": [MarvelClasses.covert.value,
+                     MarvelClasses.instinct.value,
+                     MarvelClasses.ranged.value,
+                     MarvelClasses.strength.value]},
         {"Name": "Hulk",
-         "Group": MarvelGroups.avengers,
-         "Classes": [MarvelClasses.instinct,
-                     MarvelClasses.strength]},
+         "Group": MarvelGroups.avengers.value,
+         "Classes": [MarvelClasses.instinct.value,
+                     MarvelClasses.strength.value]},
         {"Name": "Gambit",
-         "Group": MarvelGroups.xmen,
-         "Classes": [MarvelClasses.covert,
-                     MarvelClasses.instinct,
-                     MarvelClasses.ranged]},
+         "Group": MarvelGroups.xmen.value,
+         "Classes": [MarvelClasses.covert.value,
+                     MarvelClasses.instinct.value,
+                     MarvelClasses.ranged.value]},
         {"Name": "Deadpool",
-         "Group": MarvelGroups.solo,
-         "Classes": [MarvelClasses.covert,
-                     MarvelClasses.instinct,
-                     MarvelClasses.tech]}]
+         "Group": MarvelGroups.solo.value,
+         "Classes": [MarvelClasses.covert.value,
+                     MarvelClasses.instinct.value,
+                     MarvelClasses.tech.value]}]
 }

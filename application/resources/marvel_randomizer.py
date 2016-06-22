@@ -9,7 +9,6 @@ parser.add_argument('players', type=int)
 
 def generate_game(request_data):
     """Return a valid game of Marvel Legendary."""
-    heroes_index = []
     data_to_return = {'Heroes': []}
 
     # Return Heroes
@@ -19,14 +18,14 @@ def generate_game(request_data):
         abort(400, message="Invalid amount of players specified.")
 
     if request_data['players'] != 5:
-        heroes_index.extend(
+        data_to_return['Heroes'].extend(
             random.sample(range(0, len(cards.HEROES['Core'])), 5))
     else:
-        heroes_index.extend(
+        data_to_return['Heroes'].extend(
             random.sample(range(0, len(cards.HEROES['Core'])), 6))
 
-    for i in heroes_index:
-        data_to_return['Heroes'].append(cards.HEROES['Core'][i]['Name'])
+    for i, card_index in enumerate(data_to_return['Heroes']):
+        data_to_return['Heroes'][i] = cards.HEROES['Core'][card_index]['Name']
     return data_to_return
 
 

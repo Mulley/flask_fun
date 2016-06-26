@@ -4,7 +4,9 @@ from application.common import cards
 
 
 parser = reqparse.RequestParser()
-parser.add_argument('players', type=int)
+parser.add_argument('players', type=int, required=True,
+                    help="You didn't specify the amount of players!")
+parser.add_argument('expansion', type=str, action='append')
 
 
 def generate_game(request_data):
@@ -12,10 +14,16 @@ def generate_game(request_data):
     data_to_return = {'Heroes': []}
 
     # Return Heroes
-    if not request_data['players']:
-        abort(400, message="You didn't specify the amount of players!")
-    elif request_data['players'] not in cards.PLAYER_AMOUNT:
+    # Check Parsed Data
+    if request_data['players'] not in cards.PLAYER_AMOUNT:
         abort(400, message="Invalid amount of players specified.")
+    if request_data['expansion']:
+        for expansion in request_data['expansion']:
+            if expansion not in cards.Expansions.__members__:
+                abort(400, message="Invalid expansion '{}''".format(expansion))
+    else:
+        # Use all expansions
+        pass
 
     if request_data['players'] != 5:
         data_to_return['Heroes'].extend(
@@ -34,6 +42,4 @@ class MarvelRandomizer(Resource):
 
     def post(self):
         """Genereate a new game."""
-        args = parser.parse_args()
-        request_data = {'players': args['players']}
-        return generate_game(request_data)
+        return generate_game(parser.parse_args())

@@ -11,23 +11,27 @@ parser.add_argument('expansion', type=str, action='append')
 
 def generate_game(request_data):
     """Return a valid game of Marvel Legendary."""
-    data_to_return = {'Heroes': []}
-    heroes_to_pick = []
+    data_to_return = {'Heroes': [], 'Scheme': ''}
+    data_to_pick = {'Heroes': [], 'Schemes': []}
 
     # Generate List of Heroes From Which to Pick
     for expansion in request_data['expansion']:
-        heroes_to_pick.extend(cards.HEROES[expansion])
+        data_to_pick['Heroes'].extend(cards.HEROES[expansion])
+        data_to_pick['Schemes'].extend(cards.SCHEMES[expansion])
 
     # Return Heroes
     if request_data['players'] != 5:
         data_to_return['Heroes'].extend(
-            random.sample(range(0, len(heroes_to_pick)), 5))
+            random.sample(data_to_pick['Heroes'], 5))
     else:
         data_to_return['Heroes'].extend(
-            random.sample(range(0, len(heroes_to_pick)), 6))
+            random.sample(data_to_pick['Heroes'], 6))
 
-    for i, card_index in enumerate(data_to_return['Heroes']):
-        data_to_return['Heroes'][i] = heroes_to_pick[card_index]['Name']
+    for i, hero in enumerate(data_to_return['Heroes']):
+        data_to_return['Heroes'][i] = hero['Name']
+
+    # Pick a Scheme
+    data_to_return['Scheme'] = random.choice(data_to_pick['Schemes'])
     return data_to_return
 
 

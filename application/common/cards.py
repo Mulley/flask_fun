@@ -49,14 +49,14 @@ MASTERMIND_DIFFICULTIES = [
     "All-Powerful"]
 
 MASTERMINDS = {
-    Expansions.core.value: ["Dr. Doom", "Loki", "Magneto", "Red Skull"],
-    Expansions.dc.value: ["Apocalypse", "Kingpin", "Mephisto",
-                          "Mr. Sinister", "Stryfe"],
-    Expansions.gotg.value: ["Supreme Intelligence of the Kree", "Thanos"]
+    Expansions.core.name: ["Dr. Doom", "Loki", "Magneto", "Red Skull"],
+    Expansions.dc.name: ["Apocalypse", "Kingpin", "Mephisto",
+                         "Mr. Sinister", "Stryfe"],
+    Expansions.gotg.name: ["Supreme Intelligence of the Kree", "Thanos"]
 }
 
 SCHEMES = {
-    Expansions.core.value: [
+    Expansions.core.name: [
         "The Legacy Virus",
         "Midtown Bank Robbery",
         "Negative Zone Prison Breakout",
@@ -65,7 +65,7 @@ SCHEMES = {
         "Secret Invasion of the Skrull Shapeshifters",
         "Super Hero Civil War",
         "Unleash the Power of the Cosmic Cube"],
-    Expansions.dc.value: [
+    Expansions.dc.name: [
         "Capture Baby Hope",
         "Detonate the Helicarrier",
         "Massive Earthquake Generator",
@@ -74,7 +74,7 @@ SCHEMES = {
         "Steal the Weaponized Plutonium",
         "Transform Citizens into Demons",
         "X-Cutioner's Song"],
-    Expansions.gotg.value: [
+    Expansions.gotg.name: [
         "Unite the Shards",
         "Forge the Infinity Gauntlet",
         "Intergalactic Kree Nega-Bomb",
@@ -82,7 +82,7 @@ SCHEMES = {
 }
 
 HEROES = {
-    Expansions.core.value: [
+    Expansions.core.name: [
         {"Name": "Captain America",
          "Group": MarvelGroups.avengers.value,
          "Classes": [MarvelClasses.covert.value,
@@ -151,7 +151,7 @@ HEROES = {
          "Classes": [MarvelClasses.covert.value,
                      MarvelClasses.instinct.value,
                      MarvelClasses.tech.value]}],
-    Expansions.dc.value: [
+    Expansions.dc.name: [
         {"Name": "Punisher",
          "Group": MarvelGroups.mk.value,
          "Classes": [MarvelClasses.strength.value,
@@ -229,7 +229,7 @@ HEROES = {
          "Classes": [MarvelClasses.covert.value,
                      MarvelClasses.instinct.value,
                      MarvelClasses.strength.value]}],
-    Expansions.gotg.value: [
+    Expansions.gotg.name: [
         {"Name": "Drax the Destroyer",
          "Group": MarvelGroups.gotg.value,
          "Classes": [MarvelClasses.instinct.value,

@@ -11,13 +11,14 @@ parser.add_argument('expansion', type=str, action='append')
 
 def generate_game(request_data):
     """Return a valid game of Marvel Legendary."""
-    data_to_return = {'Heroes': [], 'Scheme': ''}
-    data_to_pick = {'Heroes': [], 'Schemes': []}
+    data_to_return = {'Heroes': [], 'Scheme': '', 'Mastermind': ''}
+    data_to_pick = {'Heroes': [], 'Schemes': [], 'Masterminds': []}
 
     # Generate List of Heroes From Which to Pick
     for expansion in request_data['expansion']:
         data_to_pick['Heroes'].extend(cards.HEROES[expansion])
         data_to_pick['Schemes'].extend(cards.SCHEMES[expansion])
+        data_to_pick['Masterminds'].extend(cards.MASTERMINDS[expansion])
 
     # Return Heroes
     if request_data['players'] != 5:
@@ -30,8 +31,9 @@ def generate_game(request_data):
     for i, hero in enumerate(data_to_return['Heroes']):
         data_to_return['Heroes'][i] = hero['Name']
 
-    # Pick a Scheme
+    # Pick a Scheme and Mastermind
     data_to_return['Scheme'] = random.choice(data_to_pick['Schemes'])
+    data_to_return['Mastermind'] = random.choice(data_to_pick['Masterminds'])
     return data_to_return
 
 

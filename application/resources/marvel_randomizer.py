@@ -14,17 +14,6 @@ def generate_game(request_data):
     data_to_return = {'Heroes': []}
 
     # Return Heroes
-    # Check Parsed Data
-    if request_data['players'] not in cards.PLAYER_AMOUNT:
-        abort(400, message="Invalid amount of players specified.")
-    if request_data['expansion']:
-        for expansion in request_data['expansion']:
-            if expansion not in cards.Expansions.__members__:
-                abort(400, message="Invalid expansion '{}''".format(expansion))
-    else:
-        # Use all expansions
-        pass
-
     if request_data['players'] != 5:
         data_to_return['Heroes'].extend(
             random.sample(range(0, len(cards.HEROES['Core'])), 5))
@@ -42,4 +31,17 @@ class MarvelRandomizer(Resource):
 
     def post(self):
         """Genereate a new game."""
-        return generate_game(parser.parse_args())
+        request_data = parser.parse_args()
+        # Check Parsed Data
+        if request_data['players'] not in cards.PLAYER_AMOUNT:
+            abort(400, message="Invalid amount of players specified.")
+        if request_data['expansion']:
+            for expansion in request_data['expansion']:
+                if expansion not in cards.Expansions.__members__:
+                    abort(400,
+                          message="Invalid expansion '{}''".format(expansion))
+        else:
+            # Use all expansions
+            request_data['expansion'] = list(
+                map(str, cards.Expansions.__members__))
+        return generate_game(request_data)

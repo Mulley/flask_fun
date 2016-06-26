@@ -20,7 +20,7 @@ def generate_game(request_data):
         data_to_pick['Schemes'].extend(cards.SCHEMES[expansion])
         data_to_pick['Masterminds'].extend(cards.MASTERMINDS[expansion])
 
-    # Return Heroes
+    # Pick Heroes
     if request_data['players'] != 5:
         data_to_return['Heroes'].extend(
             random.sample(data_to_pick['Heroes'], 5))
@@ -28,12 +28,15 @@ def generate_game(request_data):
         data_to_return['Heroes'].extend(
             random.sample(data_to_pick['Heroes'], 6))
 
-    for i, hero in enumerate(data_to_return['Heroes']):
-        data_to_return['Heroes'][i] = hero['Name']
-
     # Pick a Scheme and Mastermind
     data_to_return['Scheme'] = random.choice(data_to_pick['Schemes'])
     data_to_return['Mastermind'] = random.choice(data_to_pick['Masterminds'])
+
+    # Simplify Return if Desired
+    for i, hero in enumerate(data_to_return['Heroes']):
+        data_to_return['Heroes'][i] = hero['Name']
+    data_to_return['Mastermind'] = data_to_return['Mastermind']['Name']
+
     return data_to_return
 
 

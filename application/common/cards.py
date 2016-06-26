@@ -49,10 +49,24 @@ MASTERMIND_DIFFICULTIES = [
     "All-Powerful"]
 
 MASTERMINDS = {
-    Expansions.core.name: ["Dr. Doom", "Loki", "Magneto", "Red Skull"],
-    Expansions.dc.name: ["Apocalypse", "Kingpin", "Mephisto",
-                         "Mr. Sinister", "Stryfe"],
-    Expansions.gotg.name: ["Supreme Intelligence of the Kree", "Thanos"]
+    Expansions.core.name: [
+        {"Name": "Dr. Doom", "Leads": "Doombot Legion"},
+        {"Name": "Loki", "Leads": "Enemies of Asgard"},
+        {"Name": "Magneto", "Leads": "Brotherhood"},
+        {"Name": "Red Skull", "Leads": "HYDRA"}
+    ],
+    Expansions.dc.name: [
+        {"Name": "Apocalypse", "Leads": "Four Horsemen"},
+        {"Name": "Kingpin", "Leads": "Streets of New York"},
+        {"Name": "Mephisto", "Leads": "Underworld"},
+        {"Name": "Mr. Sinister", "Leads": "Marauders"},
+        {"Name": "Stryfe", "Leads": "MLF"}
+    ],
+    Expansions.gotg.name: [
+        {"Name": "Supreme Intelligence of the Kree",
+         "Leads": "Kree Starforce"},
+        {"Name": "Thanos", "Leads": "Infinity Gems"}
+    ]
 }
 
 SCHEMES = {

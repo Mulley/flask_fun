@@ -49,14 +49,28 @@ MASTERMIND_DIFFICULTIES = [
     "All-Powerful"]
 
 MASTERMINDS = {
-    Expansions.core.value: ["Dr. Doom", "Loki", "Magneto", "Red Skull"],
-    Expansions.dc.value: ["Apocalypse", "Kingpin", "Mephisto",
-                          "Mr. Sinister", "Stryfe"],
-    Expansions.gotg.value: ["Supreme Intelligence of the Kree", "Thanos"]
+    Expansions.core.name: [
+        {"Name": "Dr. Doom", "Leads": "Doombot Legion"},
+        {"Name": "Loki", "Leads": "Enemies of Asgard"},
+        {"Name": "Magneto", "Leads": "Brotherhood"},
+        {"Name": "Red Skull", "Leads": "HYDRA"}
+    ],
+    Expansions.dc.name: [
+        {"Name": "Apocalypse", "Leads": "Four Horsemen"},
+        {"Name": "Kingpin", "Leads": "Streets of New York"},
+        {"Name": "Mephisto", "Leads": "Underworld"},
+        {"Name": "Mr. Sinister", "Leads": "Marauders"},
+        {"Name": "Stryfe", "Leads": "MLF"}
+    ],
+    Expansions.gotg.name: [
+        {"Name": "Supreme Intelligence of the Kree",
+         "Leads": "Kree Starforce"},
+        {"Name": "Thanos", "Leads": "Infinity Gems"}
+    ]
 }
 
 SCHEMES = {
-    Expansions.core.value: [
+    Expansions.core.name: [
         "The Legacy Virus",
         "Midtown Bank Robbery",
         "Negative Zone Prison Breakout",
@@ -65,7 +79,7 @@ SCHEMES = {
         "Secret Invasion of the Skrull Shapeshifters",
         "Super Hero Civil War",
         "Unleash the Power of the Cosmic Cube"],
-    Expansions.dc.value: [
+    Expansions.dc.name: [
         "Capture Baby Hope",
         "Detonate the Helicarrier",
         "Massive Earthquake Generator",
@@ -74,7 +88,7 @@ SCHEMES = {
         "Steal the Weaponized Plutonium",
         "Transform Citizens into Demons",
         "X-Cutioner's Song"],
-    Expansions.gotg.value: [
+    Expansions.gotg.name: [
         "Unite the Shards",
         "Forge the Infinity Gauntlet",
         "Intergalactic Kree Nega-Bomb",
@@ -82,7 +96,7 @@ SCHEMES = {
 }
 
 HEROES = {
-    Expansions.core.value: [
+    Expansions.core.name: [
         {"Name": "Captain America",
          "Group": MarvelGroups.avengers.value,
          "Classes": [MarvelClasses.covert.value,
@@ -150,5 +164,106 @@ HEROES = {
          "Group": MarvelGroups.solo.value,
          "Classes": [MarvelClasses.covert.value,
                      MarvelClasses.instinct.value,
+                     MarvelClasses.tech.value]}],
+    Expansions.dc.name: [
+        {"Name": "Punisher",
+         "Group": MarvelGroups.mk.value,
+         "Classes": [MarvelClasses.strength.value,
+                     MarvelClasses.tech.value]},
+        {"Name": "Daredevil",
+         "Group": MarvelGroups.mk.value,
+         "Classes": [MarvelClasses.covert.value,
+                     MarvelClasses.instinct.value,
+                     MarvelClasses.strength.value]},
+        {"Name": "Elektra",
+         "Group": MarvelGroups.mk.value,
+         "Classes": [MarvelClasses.covert.value,
+                     MarvelClasses.instinct.value]},
+        {"Name": "Nightcrawler",
+         "Group": MarvelGroups.xmen.value,
+         "Classes": [MarvelClasses.covert.value,
+                     MarvelClasses.instinct.value]},
+        {"Name": "Colossus",
+         "Group": MarvelGroups.xforce.value,
+         "Classes": [MarvelClasses.covert.value,
+                     MarvelClasses.strength.value]},
+        {"Name": "Ghost Rider",
+         "Group": MarvelGroups.mk.value,
+         "Classes": [MarvelClasses.ranged.value,
+                     MarvelClasses.strength.value,
+                     MarvelClasses.tech.value]},
+        {"Name": "Jean Grey",
+         "Group": MarvelGroups.xmen.value,
+         "Classes": [MarvelClasses.covert.value,
+                     MarvelClasses.ranged.value]},
+        {"Name": "Angel",
+         "Group": MarvelGroups.xmen.value,
+         "Classes": [MarvelClasses.covert.value,
+                     MarvelClasses.instinct.value,
+                     MarvelClasses.strength.value]},
+        {"Name": "Forge",
+         "Group": MarvelGroups.xforce.value,
+         "Classes": [MarvelClasses.tech.value]},
+        {"Name": "Domino",
+         "Group": MarvelGroups.xforce.value,
+         "Classes": [MarvelClasses.covert.value,
+                     MarvelClasses.instinct.value,
+                     MarvelClasses.tech.value]},
+        {"Name": "Iron Fist",
+         "Group": MarvelGroups.mk.value,
+         "Classes": [MarvelClasses.instinct.value,
+                     MarvelClasses.strength.value]},
+        {"Name": "Bishop",
+         "Group": MarvelGroups.xmen.value,
+         "Classes": [MarvelClasses.covert.value,
+                     MarvelClasses.ranged.value,
+                     MarvelClasses.tech.value]},
+        {"Name": "Cable",
+         "Group": MarvelGroups.xforce.value,
+         "Classes": [MarvelClasses.covert.value,
+                     MarvelClasses.ranged.value,
+                     MarvelClasses.tech.value]},
+        {"Name": "Blade",
+         "Group": MarvelGroups.mk.value,
+         "Classes": [MarvelClasses.covert.value,
+                     MarvelClasses.instinct.value,
+                     MarvelClasses.strength.value,
+                     MarvelClasses.tech.value]},
+        {"Name": "Iceman",
+         "Group": MarvelGroups.xmen.value,
+         "Classes": [MarvelClasses.ranged.value,
+                     MarvelClasses.strength.value]},
+        {"Name": "Professor X",
+         "Group": MarvelGroups.xmen.value,
+         "Classes": [MarvelClasses.covert.value,
+                     MarvelClasses.instinct.value,
+                     MarvelClasses.ranged.value]},
+        {"Name": "Wolverine X-Force",
+         "Group": MarvelGroups.xforce.value,
+         "Classes": [MarvelClasses.covert.value,
+                     MarvelClasses.instinct.value,
+                     MarvelClasses.strength.value]}],
+    Expansions.gotg.name: [
+        {"Name": "Drax the Destroyer",
+         "Group": MarvelGroups.gotg.value,
+         "Classes": [MarvelClasses.instinct.value,
+                     MarvelClasses.strength.value]},
+        {"Name": "Gamora",
+         "Group": MarvelGroups.gotg.value,
+         "Classes": [MarvelClasses.covert.value,
+                     MarvelClasses.instinct.value]},
+        {"Name": "Groot",
+         "Group": MarvelGroups.gotg.value,
+         "Classes": [MarvelClasses.covert.value,
+                     MarvelClasses.strength.value]},
+        {"Name": "Rocket Raccoon",
+         "Group": MarvelGroups.gotg.value,
+         "Classes": [MarvelClasses.instinct.value,
+                     MarvelClasses.ranged.value,
+                     MarvelClasses.tech.value]},
+        {"Name": "Star-Lord",
+         "Group": MarvelGroups.gotg.value,
+         "Classes": [MarvelClasses.covert.value,
+                     MarvelClasses.ranged.value,
                      MarvelClasses.tech.value]}]
 }

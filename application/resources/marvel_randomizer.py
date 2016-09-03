@@ -42,6 +42,8 @@ def generate_game(request_data):
 
 class MarvelRandomizer(Resource):
     """The Marvel Randomizer."""
+    EXPANSION_400_MESSAGE = ("Invalid expansion '{expansion}'. " +
+                             "Valid arguments: core, dc, gotg")
 
     def post(self):
         """Genereate a new game."""
@@ -53,7 +55,8 @@ class MarvelRandomizer(Resource):
             for expansion in request_data['expansion']:
                 if expansion not in cards.Expansions.__members__:
                     abort(400,
-                          message="Invalid expansion '{}''".format(expansion))
+                          message=self.EXPANSION_400_MESSAGE.format(
+                              expansion=expansion))
         else:
             # Use all expansions
             request_data['expansion'] = list(

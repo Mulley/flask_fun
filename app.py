@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_restful import Api
-from .resources.marvel_randomizer import MarvelRandomizer
+from application.resources.marvel_randomizer import MarvelRandomizer
 
 
 app = Flask(__name__)

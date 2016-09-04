@@ -1,4 +1,3 @@
-flask
-flask-restful
-twilio
+flask==0.11.1
+flask-restful==0.3.5
 gunicorn==19.6.0

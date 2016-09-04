@@ -1,2 +1,4 @@
 flask
 flask-restful
+twilio
+gunicorn==19.6.0
